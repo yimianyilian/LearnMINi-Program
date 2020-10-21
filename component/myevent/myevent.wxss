@@ -1,0 +1,4 @@
+/* component/myevent.wxss */
+.mybut{
+  size:  mini ; 
+}

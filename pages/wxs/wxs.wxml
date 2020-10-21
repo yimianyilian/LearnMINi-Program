@@ -1,0 +1,59 @@
+<!--pages/wxs/wxs.wxml-->
+<text>pages/wxs/wxs.wxml</text>
+<wxs  src="../../wxs/info.wxs"   module="info"   />
+<wxs  src="../../wxs/format.wxs"  module ="format"  />
+<view>{{info.message}}</view>
+<view>{{info.name}}</view>
+<view>{{info.sum(10,20)}}</view>
+<view>{{format.priceFormat(price)}}</view>
+
+<view   bind:touchstart="handleTouchStart"
+                   bind:touchmove="handleTouchMove"
+                   bind:touchhand="handleTouchEnd"
+                   bind:tap="handleTap"
+                   bind:longpress="handleLongpress"
+
+></view>
+
+
+<view  class="outer"  id="outer "  bindtap="handleOutter">
+   外层view
+   <view class="inner" id="inner" bindtap="handleInner">
+   内层view
+   </view>
+</view>
+
+
+<view class="contain">
+    <block wx:for="{{titles}}"   wx:key="i">
+      <view class= 'item'  bindtap="handItem" 
+      data-index="{{i}}"
+        data-index="{{item}}"
+      >{{item}}</view>
+    </block>
+</view>
+<my-cpn></my-cpn>
+<my-cpn></my-cpn>
+<my-cpn></my-cpn>
+
+<view>当前计数：{{counter}}</view>
+<my-event bind:increment="handleIncrement"></my-event>
+
+
+
+<w-tab-control   titles="{{['衣服','裤子','鞋子']}}" 
+bind:itemclick ="handleTabClick"
+/>
+
+
+<!-- 直接选中组件修改数据 调用方法 -->
+<my-sel  class="sel-class"  id="sel-id"/>
+<button size='mini'  bind:tap='handleIncrementCpn' >修改组件内部的数据</button>
+
+<my-slot >
+ <button size="mini">我是插入的按钮</button>
+</my-slot>
+
+<my-slot >
+ <text>哈哈哈哈哈哈</text>
+</my-slot>

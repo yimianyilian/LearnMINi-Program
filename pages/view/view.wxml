@@ -1,0 +1,20 @@
+<!--pages/view/view.wxml-->
+<!--<import  src="/wxml/template.wxml"   />-->
+<import  src="../../wxml/template.wxml"   />
+
+<view>{{nowTime}}</view>
+<button size='mini' bindtap='handleSwitchColor'>切换颜色</button>
+<view class='box {{isActive ? "active":""}}'>哈哈哈</view>
+
+<view>  ------------------------------- </view> 
+<view wx:if="{{isShow}}">哈哈哈</view>
+<button size="mini" bindtap="handleSwitchShow">切换显示</button>
+<view>---------------------------------</view>
+<!--<view wx:for="{{['bac','abc','cba']}}">{{item}}{{index}}</view>
+<view wx:for="yimianyilian">{{item}}{{index}}</view>
+<view wx:for="{{9}}">{{item}}{{index}}</view>  -->
+<view wx:for="{{movies}}">{{item}}</view>
+
+<template  is="contentItem"  data="{{btnText:'按钮',content:'哈哈哈'}}" />
+<template  is="contentItem"  data="{{btnText:'点击',content:'啦啦啦'}}" />
+<template  is="contentItem"  data="{{btnText:'登录',content:'呵呵呵'}}" />
