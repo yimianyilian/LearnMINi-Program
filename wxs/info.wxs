@@ -1,0 +1,13 @@
+
+   var message ="hello world";
+   var  name ="yimianyilian";
+   var   sum= function(num1,num2){
+     return  num1+num2
+   }
+
+//common.js模块化导出写法
+module.exports= {
+  message:message,
+  name:name,
+  sum:sum
+}
