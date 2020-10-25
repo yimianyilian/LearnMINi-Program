@@ -9,7 +9,7 @@ Page({
      titles:["衣服","裤子","鞋子"],
      counter: 0 
   },
-  
+
   handleTouchStart() {
     console.log("handleTouchStart")
   },
@@ -74,7 +74,13 @@ handItem(event){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+          //发送网络请求
+          wx.request({
+            url: 'http://123.207.32.32:8000/recommend ',
+            success: function(res) {
+              console.log(res)
+            }
+          })
   },
 
   /**
